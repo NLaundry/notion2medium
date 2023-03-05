@@ -1,8 +1,10 @@
 from typing import List
 
 from cleo.helpers import option
-from medium_sdk_python.medium import MediumError
-from notion2md.exporter import string_exporter
+from medium import MediumError
+# from notion2md.exporter import string_exporter
+# from notion2md.exporter import StringExporter 
+from notion2md.exporter.block import StringExporter
 
 from notion2medium.exceptions import ClientTokenException
 
@@ -104,7 +106,8 @@ Publish a <highlight>Notion</highlight> page to <highlight>Medium</highlight>.
                 "RETRIEVED", f"{self.info(page_title)}'s content"
             ),
         ):
-            content = string_exporter(block_id=page_id, unzipped=True)
+            # content = string_exporter(block_id=page_id, unzipped=True)
+            content = StringExporter(block_id=page_id).export()
         # - inject title header to content
         content = self.inject_title_to_content(page_title, content)
 

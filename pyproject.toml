@@ -7,7 +7,7 @@ readme = "README.md"
 
 packages = [
     { include = "notion2medium" },
-    { include = "medium_sdk_python" },
+    { include = "medium-sdk-python" },
 ]
 
 exclude = ["tests"]
@@ -42,7 +42,7 @@ filter_files = true
 known_first_party = "notion2medium"
 
 [tool.black]
-extend-exclude = 'medium_sdk_python/'
+extend-exclude = 'medium-sdk-python/'
 line-length = 79
 
 [tool.semantic_release]

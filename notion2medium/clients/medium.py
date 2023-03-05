@@ -2,7 +2,7 @@ import os
 
 from typing import List
 
-from medium_sdk_python.medium import Client
+from medium import Client
 
 
 class MediumClient(object):
